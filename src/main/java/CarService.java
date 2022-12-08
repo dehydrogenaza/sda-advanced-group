@@ -11,6 +11,11 @@ public class CarService {
     public CarService(List<Car> cars) {
         this.cars = cars;
     }
+
+    //2
+    public boolean removeCar(Car car) {
+        return cars.remove(car);
+    }
     
     //4
     public List<Car> carsWithV12Engine() {
@@ -38,6 +43,14 @@ public class CarService {
 
         return Optional.ofNullable(mostExpensiveCar);
     }
+
+    //8
+    public List<Car> getCarsWithAtLeast3Manufacturers() {
+        return cars.stream()
+                .filter(car -> car.getManufacturers().size() >= 3)
+                .collect(Collectors.toList());
+    }
+
     
     //10
     public boolean isInTheList (Car car) {
