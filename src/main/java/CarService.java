@@ -80,6 +80,16 @@ public class CarService {
 
     }
 
+//5
+    public List <Car> carsBefore1999 () {
+        List <Car> carList = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getYear() < 1999) carList.add(car);
+        }
+
+        return carList;
+    }
+
     //12
     public List<Car> getByManufacturerAndYear(Manufacturer manufacturer, int year, Comparison comparison) {
         Predicate<Car> predicate = switch(comparison) {
@@ -97,6 +107,7 @@ public class CarService {
                 .filter(car -> car.getManufacturers().contains(manufacturer))
                 .filter(predicate)
                 .collect(Collectors.toList());
+
 
 }
 }
