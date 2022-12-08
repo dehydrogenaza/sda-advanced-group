@@ -12,6 +12,13 @@ public class CarService {
         this.cars = cars;
     }
 
+//1
+    public void addCars(Car car) {
+        cars.add(car);
+    }
+
+
+
     //2
     public boolean removeCar(Car car) {
         return cars.remove(car);
@@ -42,6 +49,18 @@ public class CarService {
         }
 
         return Optional.ofNullable(mostExpensiveCar);
+    }
+    
+    //7
+    public Car getCheapestCar(List<Car> cars) {
+        Car cheapestCar = null;
+        int cheapestCarPrice = 0;
+        for (Car car : cars) {
+            if (car.getPrice() < cheapestCarPrice) {
+                cheapestCar = car;
+            }
+        }
+        return cheapestCar;
     }
 
     //8
