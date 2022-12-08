@@ -25,4 +25,13 @@ public class CarService {
         }
         return false;
     }
+
+    public List <Car> carsBefore1999 () {
+        List <Car> carList = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getYear() < 1999) carList.add(car);
+        }
+
+        return carList;
+    }
 }
